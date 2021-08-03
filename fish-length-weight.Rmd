@@ -49,7 +49,7 @@ fish_data <- data.frame(fish_length, barracuda_weight)
 
 ggplot(data = fish_data, aes(x = fish_length, y = barracuda_weight)) +
   geom_point() +
-  labs(x = "Fish Lengths (cm)",
+  labs(x = "Fish Lengths (centimeters)",
        y = "Barracuda Weight (g)",
        title = "Barracuda  weight with Respect to Length")
 
