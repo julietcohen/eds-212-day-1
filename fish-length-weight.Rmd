@@ -1,0 +1,57 @@
+---
+title: "Section 3"
+author: "Juliet"
+date: "8/2/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+```
+
+# Elephant Header
+## Rhino Header
+### Squirrel Header
+
+**bold**
+
+*italics*
+
+ # superscript
+ #^ Elephant Script
+ 
+ # subscript
+_ Squirrel Script
+
+* unordered list
+
+#!()
+
+```{r}
+fish_weight <- function(a, b, L) {
+  W = a * (L^b)
+}
+
+(milkfish <- fish_weight(a = 0.905, b = 2.52, L = 60))
+
+(trevally <- fish_weight(a = 0.0353, b = 3.05, L = 60))
+
+(barracuda <- fish_weight(a = 0.0181, b = 3.27, L = 60))
+```
+
+```{r}
+fish_length <- seq(from = 0, to = 200, by = 1)
+
+(barracuda_weight <- fish_weight(a = 0.0181, b = 3.27, L = fish_length))
+
+fish_data <- data.frame(fish_length, barracuda_weight)
+
+ggplot(data = fish_data, aes(x = fish_length, y = barracuda_weight)) +
+  geom_point() +
+  labs(x = "Fish Lengths (cm)",
+       y = "Barracuda Weight (g)",
+       title = "Barracuda  weight with Respect to Length")
+
+```
+
